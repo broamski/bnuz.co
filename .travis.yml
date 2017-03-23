@@ -1,3 +1,11 @@
+language: python
+python:
+  - '2.7'
+env:
+  DISTRIBUTION_ID:
+    secure: iPpQfPbusYfpL55y0gTgmMOYnoaDD/rrC0X3iHfiICZ78xefJwhCxA+sZ5blMyupRo+wpU27yJRTV9TragpiyKJ8isnfrdns/h1+bLn5jZK+wKACou1JMDeR8PjFObWF8O/Y08FEwp/Wx4pgYQzH61PlXF8pbjR5z0EcaRIRY9igkGsw0xL9YbGYiNly48NsHuH08+/C95Fb3C//6yBbHJXzhJmRjqbtvUeuAyXy8P4JwFDeaUCjMbebFn4vp7gn/O1MBwM/M8eVu2Z7x6KKh22GJ6s6ZhXB2VGkN38384j1WUKx55PgRoQIru39RxBxgIzVi4Q0tFJ/qJF/vgx3SYZ6Kuptip4Il1jDiDCZsUTjG3QsqtEirN6NEPzsTv3WNNOefmoALuVaC8vpJ4yZrINV0ekXhP/9ywNfpaP+WV1OJkcRyAyX9MQEECgD8FqG+iJsLqjEs/23//cWhSyz31isN2wlHCbZSdf5FLHzDc8xIjAqPW5ewDXFjgruRIb9aNrkk+rOILWtOgp3PRnogXh82R9yj5qHzkjx5IJ3cNDXhI7jRRpOSaP6N+AYZEJ5pv6CNvy5b7NWjyn/XDw564DFrQzS2R1btdPflfw6eIYQNPT4vPMpUbafNA8S4I96vGE37ycewdYWsJ+kjGpvVWfg2hl/gu4b3SYBYt+77Vw=
+install:
+  - pip install aws-cli
 deploy:
   provider: s3
   access_key_id:
@@ -8,3 +16,6 @@ deploy:
   local-dir: bnuz.co
   on:
     repo: broamski/bnuz.co
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths /*
