@@ -14,6 +14,8 @@ deploy:
   secret_access_key:
     secure: j2FF8dU0wTKVq0v2g8sEktPo9o/GQ5OuWKCE3fgq0aZaAI6Vi+OCkRS1C70lU4GhocwGrgWkKggoHezTutC6zJYiYNkjT4gybEf5nqQyDat+h9Wiv9kt1n/eIU55Bs/+/cA/C6cGSuTpdChTq7q2mI4VHAi1/DG2bOZ0kTuY0uXMbloyEmCELUh++WzT7VLx65dmrxpTEaIHPmQMOH0ZGhPcf8cQxKwNyGRS+MsRR4M8sliqupb/17tlkJ89Xfh8xg0RSiJa7QoFg30JvVkPx2w7uBFLdSSOzx60qGOlsWX38EkaSDt5f40rHoqE8L6nubIwBz3bx3Em4lO5MhRfbZDTuFsQQCA67WsrXi+ZCKkJzYoE/HQLXUO8FvbS5bmh22bRltNNAA4U7fyV/6IV+TKYPhEs0el4tz/sxkxv1nFCK1occxYt2DzHTBoLvp8A7AebSCE9x3jgCv/DVDY/dhhMAGPYHszvpt6lwPWRW2b6TaRe5e4DnDGPjGic6p2SSTyfVhXAAXo+UJHoqvux+KYrhxM1fa/pkUA7BNFUeDyu2Ozpc8Wip2k2TiGv7KyNpRBON8OubyQ+sbqbKrirmdUfpRma46GetKq4hZkGBn6C/8wcbKaknViz3ZSXQKKVu/SVOg78aPdjmwBki9ijFm97B3egWYXUKkx64an0Vo8=
   bucket: bnuz.co
+  region: "us-west-2"
+  skip_cleanup: true
   local-dir: bnuz.co
   on:
     repo: broamski/bnuz.co
